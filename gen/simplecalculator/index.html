@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator" class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button data-value="C" class="btn control">C</button>
+            <button data-value="/" class="btn operator">/</button>
+            <button data-value="*" class="btn operator">*</button>
+            <button data-value="-" class="btn operator">-</button>
+            <!-- Row 2 -->
+            <button data-value="7" class="btn digit">7</button>
+            <button data-value="8" class="btn digit">8</button>
+            <button data-value="9" class="btn digit">9</button>
+            <button data-value="+" class="btn operator">+</button>
+            <!-- Row 3 -->
+            <button data-value="4" class="btn digit">4</button>
+            <button data-value="5" class="btn digit">5</button>
+            <button data-value="6" class="btn digit">6</button>
+            <button data-value="=" class="btn operator">=</button>
+            <!-- Row 4 -->
+            <button data-value="1" class="btn digit">1</button>
+            <button data-value="2" class="btn digit">2</button>
+            <button data-value="3" class="btn digit">3</button>
+            <button data-value="0" class="btn digit">0</button>
+            <!-- Row 5 -->
+            <button data-value="." class="btn digit">.</button>
+            <button data-value="" class="btn placeholder" disabled></button>
+            <button data-value="" class="btn placeholder" disabled></button>
+            <button data-value="" class="btn placeholder" disabled></button>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

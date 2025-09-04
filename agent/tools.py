@@ -1,10 +1,11 @@
 import pathlib
+import re
 import subprocess
 from typing import Tuple
 
 from langchain_core.tools import tool
 
-PROJECT_ROOT = pathlib.Path.cwd() / "generated_project"
+PROJECT_ROOT = pathlib.Path.cwd() / "gen"
 
 
 def safe_path_for_project(path: str) -> pathlib.Path:
@@ -13,6 +14,22 @@ def safe_path_for_project(path: str) -> pathlib.Path:
         raise ValueError("Attempt to write outside project root")
     return p
 
+def init_project_root():
+    PROJECT_ROOT.mkdir(parents=True, exist_ok=True)
+    return str(PROJECT_ROOT)
+
+def slugify_project_name(name: str) -> str:
+    s = name.strip().lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s)
+    s = re.sub(r"-+", "-", s).strip("-")
+    return s or "project"
+
+def set_project_root_from_name(name: str, base_dir: str = "gen") -> str:
+    global PROJECT_ROOT
+    slug = slugify_project_name(name)
+    PROJECT_ROOT = pathlib.Path.cwd() / base_dir / slug
+    PROJECT_ROOT.mkdir(parents=True, exist_ok=True)
+    return str(PROJECT_ROOT)
 
 @tool
 def write_file(path: str, content: str) -> str:
@@ -56,7 +73,3 @@ def run_cmd(cmd: str, cwd: str = None, timeout: int = 30) -> Tuple[int, str, str
     res = subprocess.run(cmd, shell=True, cwd=str(cwd_dir), capture_output=True, text=True, timeout=timeout)
     return res.returncode, res.stdout, res.stderr
 
-
-def init_project_root():
-    PROJECT_ROOT.mkdir(parents=True, exist_ok=True)
-    return str(PROJECT_ROOT)

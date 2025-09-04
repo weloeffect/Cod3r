@@ -28,7 +28,8 @@ def planner_agent(state: dict) -> dict:
     )
     if resp is None:
         raise ValueError("Planner did not return a valid response.")
-    return {"plan": resp}
+    project_root = set_project_root_from_name(getattr(resp, "name", user_prompt))
+    return {"plan": resp, "project_root": project_root}
 # agent 2: Architect agent
 def architect_agent(state: dict) -> dict:
     """Creates TaskPlan from Plan."""

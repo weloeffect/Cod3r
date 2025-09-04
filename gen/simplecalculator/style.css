@@ -1,0 +1,137 @@
+/*
+    Calculator Stylesheet
+    Implements responsive styling, root variables, and component-specific rules.
+*/
+
+:root {
+    /* Color palette */
+    --bg-color: #f0f2f5;               /* Page background */
+    --calc-bg: #ffffff;                /* Calculator container */
+    --display-bg: #eaeaea;             /* Display background */
+    --digit-bg: #ffffff;               /* Digit button background */
+    --operator-bg: #ff9500;            /* Operator button background */
+    --operator-color: #ffffff;        /* Operator button text */
+    --control-bg: #d4d4d2;             /* Clear button background */
+    --control-color: #000000;         /* Clear button text */
+    --equals-bg: #34c759;              /* Equals button background */
+    --equals-color: #ffffff;           /* Equals button text */
+    --placeholder-bg: transparent;    /* Placeholder (disabled) button */
+
+    /* Typography */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --display-font-size: 2rem;
+    --button-font-size: 1.5rem;
+
+    /* Spacing & sizing */
+    --spacing: 0.5rem;
+    --border-radius: 0.4rem;
+}
+
+/* Global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+    font-family: var(--font-family);
+}
+
+#calculator {
+    width: 90vw;               /* responsive width */
+    max-width: 320px;          /* fixed upper bound */
+    background: var(--calc-bg);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.display {
+    background: var(--display-bg);
+    padding: var(--spacing);
+    font-size: var(--display-font-size);
+    text-align: right;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-height: 2.5rem; /* ensure enough height */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing);
+}
+
+.btn {
+    width: 100%;
+    padding: var(--spacing);
+    font-size: var(--button-font-size);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Digit buttons */
+.digit {
+    background: var(--digit-bg);
+    color: #000;
+}
+
+/* Operator buttons (/, *, -, +, = ) */
+.operator {
+    background: var(--operator-bg);
+    color: var(--operator-color);
+}
+
+/* Specific styling for the equals button */
+.operator[data-value="="] {
+    background: var(--equals-bg);
+    color: var(--equals-color);
+}
+
+/* Control buttons – clear (C) */
+.control {
+    background: var(--control-bg);
+    color: var(--control-color);
+}
+
+/* Placeholder (disabled) buttons – keep layout but invisible */
+.placeholder {
+    background: var(--placeholder-bg);
+    visibility: hidden;
+    cursor: default;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 400px) {
+    :root {
+        --display-font-size: 1.5rem;
+        --button-font-size: 1.2rem;
+        --spacing: 0.4rem;
+    }
+
+    .display {
+        padding: calc(var(--spacing) / 2);
+    }
+
+    .btn {
+        padding: calc(var(--spacing) / 2);
+    }
+}
