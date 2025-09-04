@@ -1,4 +1,4 @@
-# Coder Agent
+# Cod3r
 
 An agentic engineering assistant that plans, architects, and scaffolds projects from a natural-language prompt. It uses LangGraph with a Planner → Architect → Coder flow and writes output files under a dynamically named project directory: `gen/<slug-of-plan-or-prompt>`.
 
@@ -65,6 +65,9 @@ python -m streamlit run main.py --server.headless=true --server.port=8501
 - `agent/graph.py`: LangGraph setup with nodes:
   - Planner → Architect → Coder; loops coder until done
   - Sets project directory based on the Plan name (fallback prompt)
+    
+## Workflow
+<img width="298" height="498" alt="image" src="https://github.com/user-attachments/assets/0fba1baf-46a3-4957-8865-bad40356c9bf" />
 
 ## Configuration
 - Model is configured in `agent/graph.py` via `ChatGroq`:
@@ -78,6 +81,7 @@ python -m streamlit run main.py --server.headless=true --server.port=8501
 ## Notes
 - Streamlit should be launched with `streamlit run ...` (not `python ...`).
 - If running in WSL2, access the UI at `http://localhost:8501` from Windows.
-
+## Sample
+<img width="1894" height="874" alt="2025-09-04" src="https://github.com/user-attachments/assets/b9e0e2b8-e288-4cf6-9401-64a1d7a39cca" />
 ## License
 MIT (or your preferred license)
