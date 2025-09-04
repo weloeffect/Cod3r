@@ -79,6 +79,6 @@ python -m streamlit run main.py --server.headless=true --server.port=8501
 - Streamlit should be launched with `streamlit run ...` (not `python ...`).
 - If running in WSL2, access the UI at `http://localhost:8501` from Windows.
 ## Sample
-<img width="1920" height="1080" alt="2025-09-04" src="https://github.com/user-attachments/assets/b8f86394-4a19-4e51-8d3e-aaf89c688af6" />
+<img width="1894" height="874" alt="2025-09-04" src="https://github.com/user-attachments/assets/b9e0e2b8-e288-4cf6-9401-64a1d7a39cca" />
 ## License
 MIT (or your preferred license)
