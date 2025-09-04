@@ -1,4 +1,4 @@
-# Coder Agent
+# Cod3r
 
 An agentic engineering assistant that plans, architects, and scaffolds projects from a natural-language prompt. It uses LangGraph with a Planner → Architect → Coder flow and writes output files under a dynamically named project directory: `gen/<slug-of-plan-or-prompt>`.
 
