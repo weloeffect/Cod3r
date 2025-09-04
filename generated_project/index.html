@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="display" aria-live="polite">0</div>
+        <div class="buttons-grid">
+            <!-- Row 1 -->
+            <button class="btn" data-action="clear" data-value="C" role="button" tabindex="0">C</button>
+            <button class="btn" data-action="backspace" data-value="⌫" role="button" tabindex="0">⌫</button>
+            <button class="btn" data-action="operator" data-value="/" role="button" tabindex="0">/</button>
+            <button class="btn" data-action="operator" data-value="*" role="button" tabindex="0">*</button>
+            <!-- Row 2 -->
+            <button class="btn" data-action="digit" data-value="7" role="button" tabindex="0">7</button>
+            <button class="btn" data-action="digit" data-value="8" role="button" tabindex="0">8</button>
+            <button class="btn" data-action="digit" data-value="9" role="button" tabindex="0">9</button>
+            <button class="btn" data-action="operator" data-value="-" role="button" tabindex="0">-</button>
+            <!-- Row 3 -->
+            <button class="btn" data-action="digit" data-value="4" role="button" tabindex="0">4</button>
+            <button class="btn" data-action="digit" data-value="5" role="button" tabindex="0">5</button>
+            <button class="btn" data-action="digit" data-value="6" role="button" tabindex="0">6</button>
+            <button class="btn" data-action="operator" data-value="+" role="button" tabindex="0">+</button>
+            <!-- Row 4 -->
+            <button class="btn" data-action="digit" data-value="1" role="button" tabindex="0">1</button>
+            <button class="btn" data-action="digit" data-value="2" role="button" tabindex="0">2</button>
+            <button class="btn" data-action="digit" data-value="3" role="button" tabindex="0">3</button>
+            <button class="btn" data-action="equals" data-value="=" role="button" tabindex="0">=</button>
+            <!-- Row 5 -->
+            <button class="btn" data-action="digit" data-value="0" role="button" tabindex="0">0</button>
+            <button class="btn" data-action="digit" data-value="." role="button" tabindex="0">.</button>
+            <!-- Empty placeholders to keep grid alignment -->
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
