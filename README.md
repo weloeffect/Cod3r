@@ -65,6 +65,9 @@ python -m streamlit run main.py --server.headless=true --server.port=8501
 - `agent/graph.py`: LangGraph setup with nodes:
   - Planner → Architect → Coder; loops coder until done
   - Sets project directory based on the Plan name (fallback prompt)
+    
+## Workflow
+<img width="298" height="498" alt="image" src="https://github.com/user-attachments/assets/0fba1baf-46a3-4957-8865-bad40356c9bf" />
 
 ## Configuration
 - Model is configured in `agent/graph.py` via `ChatGroq`:
