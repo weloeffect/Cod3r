@@ -91,3 +91,8 @@ graph_builder.add_conditional_edges(
 )
 graph_builder.set_entry_point("planner")
 agent = graph_builder.compile()
+
+plot = agent.get_graph(xray=True)
+png = plot.draw_mermaid_png()
+with open("agents_graph.png", "wb") as f:
+    f.write(png)
